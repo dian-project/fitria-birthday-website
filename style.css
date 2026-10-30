@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+:root{--bg:#171522;--panel:#211e2e;--cream:#f8f0e8;--pink:#e6b7c8;--muted:#bcb4c7;--gold:#e7cda1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 10%,#30243b 0%,var(--bg) 58%);color:var(--cream);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+.stars{position:fixed;inset:0;pointer-events:none;opacity:.45;background-image:radial-gradient(2px 2px at 20% 30%,#fff,transparent),radial-gradient(1px 1px at 70% 20%,#fff,transparent),radial-gradient(2px 2px at 80% 70%,#e6b7c8,transparent),radial-gradient(1px 1px at 35% 80%,#fff,transparent),radial-gradient(1px 1px at 60% 55%,#fff,transparent);background-size:230px 210px;animation:twinkle 5s ease-in-out infinite alternate}
+main{position:relative;z-index:1}
+.screen{min-height:100svh;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 22px 72px;max-width:760px;margin:auto;animation:appear .8s ease both}
+.screen.active{display:flex}
+.eyebrow{font-size:.68rem;letter-spacing:.24em;color:var(--pink);font-weight:600;margin-bottom:24px}
+h1,h2{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.12;margin:0 0 20px}
+h1{font-size:clamp(3.6rem,12vw,6.2rem)}h2{font-size:clamp(2.6rem,8vw,4.2rem)}
+h1 span,h2 span{font-style:italic;color:var(--pink)}
+.moon{font-size:3.2rem;color:var(--gold);margin-bottom:18px;animation:float 4s ease-in-out infinite}
+.muted,.message{max-width:480px;color:var(--muted);line-height:1.85;font-size:.98rem}
+.primary,.secondary{border:0;border-radius:999px;padding:14px 22px;font:600 .9rem 'DM Sans',sans-serif;cursor:pointer;transition:transform .2s,background .2s}
+.primary{margin-top:22px;background:var(--pink);color:#2a1d2c;box-shadow:0 8px 30px #e6b7c822}
+.primary span{padding-left:12px;font-size:1.15rem}
+.primary:hover,.secondary:hover{transform:translateY(-3px)}
+.tiny{font-size:.72rem;color:#91889e;margin-top:30px;letter-spacing:.04em}
+.cake{width:180px;height:150px;position:relative;margin:12px 0 30px}
+.cake-plate{position:absolute;bottom:8px;left:9px;width:162px;height:14px;border-radius:50%;background:#8e7089}
+.cake-body{position:absolute;bottom:20px;left:25px;width:130px;height:65px;border-radius:10px 10px 16px 16px;background:linear-gradient(#e6b7c8 0 22%,#b87594 22% 33%,#f4d9df 33%);box-shadow:inset -10px 0 #9c6585}
+.cake-top{position:absolute;bottom:72px;left:25px;width:130px;height:24px;border-radius:50%;background:#f4d9df;border-bottom:5px solid #d79db5}
+.candles{position:absolute;z-index:2;bottom:92px;left:55px;display:flex;gap:23px}
+.candles b{height:25px;width:5px;background:repeating-linear-gradient(135deg,#f8f0e8 0 4px,#d79db5 4px 8px);border-radius:3px}
+.flames{position:absolute;z-index:3;bottom:116px;left:54px;display:flex;gap:21px}
+.flames i{width:8px;height:13px;background:var(--gold);border-radius:80% 10% 70% 30%;transform:rotate(45deg);animation:flicker .7s infinite alternate}
+.birthday .message{margin-top:0}
+.secondary{margin-top:26px;color:var(--cream);background:#ffffff12;border:1px solid #ffffff25}
+.secondary span{margin-left:10px;color:var(--pink)}
+.photo-frame {
+    width: 100%;
+    max-width: 380px;
+    height: 450px;
+    margin: 25px auto;
+    overflow: hidden;
+    border-radius: 18px;
+    position: relative;
+    background: #eee;
+}
+
+.memory-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px;
+}
+.photo-placeholder{height:100%;display:none;align-items:center;justify-content:center;flex-direction:column;border-radius:145px 145px 16px 16px;background:linear-gradient(145deg,#34283c,#201d2b);color:var(--muted)}
+.photo-placeholder span{font-size:3rem;color:var(--pink)}.photo-placeholder p{margin:14px 0 5px}.photo-placeholder small{font-size:.75rem;color:#9c91a7}
+.quote{font-family:'Playfair Display',serif;font-style:italic;color:var(--pink);max-width:390px;line-height:1.7;margin:12px 0}
+.envelope{width:min(82vw,330px);height:190px;border:1px solid #e6b7c866;border-radius:12px;background:linear-gradient(145deg,#6d4c68,#35273e);position:relative;overflow:hidden;cursor:pointer;box-shadow:0 18px 50px #0004;margin:8px 0 18px}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(35deg,transparent 49%,#c99bb6 50%,transparent 51%),linear-gradient(-35deg,transparent 49%,#c99bb6 50%,transparent 51%);opacity:.65}
+.envelope-heart{position:relative;z-index:1;display:block;font-size:3rem;color:#f7dce7;text-shadow:0 2px 12px #0003}
+.envelope-hint{position:relative;z-index:1;display:block;color:#fff1f6;font-size:.8rem;margin-top:8px}
+.letter{max-width:600px;text-align:left;background:#f6eee7;color:#332736;border-radius:12px;padding:28px clamp(20px,5vw,42px);line-height:1.9;box-shadow:0 20px 70px #0004;margin:10px 0 8px;animation:appear .8s ease both}
+.letter p{margin:0 0 16px}.letter p:first-child{font-family:'Playfair Display',serif;font-size:1.4rem;color:#8e5878}
+.signoff{font-family:'Playfair Display',serif;font-size:1.1rem}.signoff span{font-style:italic;color:#8e5878}
+.hidden{display:none!important}
+.end-star{font-size:3.8rem;color:var(--gold);margin-bottom:24px;animation:float 4s ease-in-out infinite}
+.final-wish{font-family:'Playfair Display',serif;font-style:italic;color:var(--pink);font-size:1.25rem;margin-top:18px}
+.text-button{border:0;background:none;color:#a79bae;text-decoration:underline;text-underline-offset:5px;cursor:pointer;margin-top:28px;font:inherit}
+.music-toggle{position:fixed;z-index:5;right:16px;bottom:16px;border:1px solid #ffffff30;background:#211e2edd;color:var(--cream);border-radius:99px;padding:10px 14px;cursor:pointer;backdrop-filter:blur(10px)}
+.music-toggle span{font-size:.75rem;margin-left:5px}
+.memory-video {
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+@keyframes appear{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes twinkle{from{opacity:.25}to{opacity:.65}}
+@keyframes flicker{from{transform:rotate(35deg) scale(.9);opacity:.8}to{transform:rotate(50deg) scale(1.08);opacity:1}}
+@media(min-width:700px){.screen{padding-top:70px;padding-bottom:80px}.photo-frame{width:290px;height:380px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
